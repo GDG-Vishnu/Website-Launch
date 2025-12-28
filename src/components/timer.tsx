@@ -17,7 +17,7 @@ export default function CountdownTimer({ onComplete }: CountdownTimerProps) {
       const startDelay = setTimeout(() => {
         setIsActive(true);
       }, 500);
-      
+
       return () => clearTimeout(startDelay);
     }
   }, [isCut]);
@@ -44,34 +44,25 @@ export default function CountdownTimer({ onComplete }: CountdownTimerProps) {
     };
   }, [isActive, timeLeft, onComplete]);
 
-  const progress = ((35 - timeLeft) / 35) * 100;
+  const progress = ((10 - timeLeft) / 10) * 100;
 
   return (
-    <div className="h-[500px] bg-black flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="bg-white rounded-lg shadow-2xl p-8 border-4 border-black">
-          <h1 className="text-4xl font-bold text-center text-black mb-8">
-            Launching in ....
-          </h1>
+    <div className="min-h-screen bg-transparent flex flex-col items-center justify-center p-4">
+      <h1 className="text-3xl md:text-5xl font-bold text-stone-900 mb-8 tracking-wide">
+        Launching in...
+      </h1>
 
-          <div className="relative mb-8">
-            <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden border-2 border-black">
-              <div
-                className="h-full bg-black transition-all duration-1000 ease-linear"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
-
-          <div className="text-center mb-8">
-            <div className="text-8xl font-bold text-black font-mono">
-              {timeLeft}
-            </div>
-            
-            
-          </div>
-        </div>
+      <div
+        className="text-[12rem] md:text-[16rem] lg:text-[20rem] font-bold text-stone-900 font-mono leading-none"
+        style={{
+          textShadow:
+            "0 0 40px rgba(255,215,0,0.5), 0 0 80px rgba(255,215,0,0.3)",
+        }}
+      >
+        {timeLeft}
       </div>
+
+  
     </div>
   );
 }

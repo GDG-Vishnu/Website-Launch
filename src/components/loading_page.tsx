@@ -31,7 +31,7 @@ export default function LoadingPage() {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 w-screen h-screen bg-black flex flex-col items-center justify-center p-4 z-[100]" style={{ minHeight: '100vh', minWidth: '100vw' }}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated circles */}
@@ -95,7 +95,6 @@ export default function LoadingPage() {
             >
               www.gdgvitb.in
             </span>
-           
           </h1>
           <p className="text-white/40 text-sm tracking-widest uppercase">
             Please wait{dots}

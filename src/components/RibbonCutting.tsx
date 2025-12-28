@@ -448,12 +448,24 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
           >
             {/* Outer ribbon loops */}
             <defs>
-              <linearGradient id="ribbonGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient
+                id="ribbonGradient1"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#DC143C" />
                 <stop offset="50%" stopColor="#8B0000" />
                 <stop offset="100%" stopColor="#5C0000" />
               </linearGradient>
-              <linearGradient id="ribbonGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <linearGradient
+                id="ribbonGradient2"
+                x1="100%"
+                y1="0%"
+                x2="0%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#FF2D2D" />
                 <stop offset="50%" stopColor="#DC143C" />
                 <stop offset="100%" stopColor="#8B0000" />
@@ -463,47 +475,178 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
                 <stop offset="50%" stopColor="#FFA500" />
                 <stop offset="100%" stopColor="#B8860B" />
               </linearGradient>
-              <filter id="ribbonShadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="2" dy="4" stdDeviation="3" floodOpacity="0.4" />
+              <filter
+                id="ribbonShadow"
+                x="-20%"
+                y="-20%"
+                width="140%"
+                height="140%"
+              >
+                <feDropShadow
+                  dx="2"
+                  dy="4"
+                  stdDeviation="3"
+                  floodOpacity="0.4"
+                />
               </filter>
             </defs>
-            
+
             {/* Top loop */}
-            <ellipse cx="90" cy="35" rx="28" ry="35" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" />
-            <ellipse cx="90" cy="35" rx="24" ry="30" fill="url(#ribbonGradient2)" />
-            
+            <ellipse
+              cx="90"
+              cy="35"
+              rx="28"
+              ry="35"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+            />
+            <ellipse
+              cx="90"
+              cy="35"
+              rx="24"
+              ry="30"
+              fill="url(#ribbonGradient2)"
+            />
+
             {/* Bottom loop */}
-            <ellipse cx="90" cy="145" rx="28" ry="35" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" />
-            <ellipse cx="90" cy="145" rx="24" ry="30" fill="url(#ribbonGradient2)" />
-            
+            <ellipse
+              cx="90"
+              cy="145"
+              rx="28"
+              ry="35"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+            />
+            <ellipse
+              cx="90"
+              cy="145"
+              rx="24"
+              ry="30"
+              fill="url(#ribbonGradient2)"
+            />
+
             {/* Left loop */}
-            <ellipse cx="35" cy="90" rx="35" ry="28" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" />
-            <ellipse cx="35" cy="90" rx="30" ry="24" fill="url(#ribbonGradient2)" />
-            
+            <ellipse
+              cx="35"
+              cy="90"
+              rx="35"
+              ry="28"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+            />
+            <ellipse
+              cx="35"
+              cy="90"
+              rx="30"
+              ry="24"
+              fill="url(#ribbonGradient2)"
+            />
+
             {/* Right loop */}
-            <ellipse cx="145" cy="90" rx="35" ry="28" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" />
-            <ellipse cx="145" cy="90" rx="30" ry="24" fill="url(#ribbonGradient2)" />
-            
+            <ellipse
+              cx="145"
+              cy="90"
+              rx="35"
+              ry="28"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+            />
+            <ellipse
+              cx="145"
+              cy="90"
+              rx="30"
+              ry="24"
+              fill="url(#ribbonGradient2)"
+            />
+
             {/* Diagonal loops - top left */}
-            <ellipse cx="50" cy="50" rx="25" ry="20" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" transform="rotate(-45 50 50)" />
-            <ellipse cx="50" cy="50" rx="21" ry="16" fill="url(#ribbonGradient2)" transform="rotate(-45 50 50)" />
-            
+            <ellipse
+              cx="50"
+              cy="50"
+              rx="25"
+              ry="20"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+              transform="rotate(-45 50 50)"
+            />
+            <ellipse
+              cx="50"
+              cy="50"
+              rx="21"
+              ry="16"
+              fill="url(#ribbonGradient2)"
+              transform="rotate(-45 50 50)"
+            />
+
             {/* Diagonal loops - top right */}
-            <ellipse cx="130" cy="50" rx="25" ry="20" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" transform="rotate(45 130 50)" />
-            <ellipse cx="130" cy="50" rx="21" ry="16" fill="url(#ribbonGradient2)" transform="rotate(45 130 50)" />
-            
+            <ellipse
+              cx="130"
+              cy="50"
+              rx="25"
+              ry="20"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+              transform="rotate(45 130 50)"
+            />
+            <ellipse
+              cx="130"
+              cy="50"
+              rx="21"
+              ry="16"
+              fill="url(#ribbonGradient2)"
+              transform="rotate(45 130 50)"
+            />
+
             {/* Diagonal loops - bottom left */}
-            <ellipse cx="50" cy="130" rx="25" ry="20" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" transform="rotate(45 50 130)" />
-            <ellipse cx="50" cy="130" rx="21" ry="16" fill="url(#ribbonGradient2)" transform="rotate(45 50 130)" />
-            
+            <ellipse
+              cx="50"
+              cy="130"
+              rx="25"
+              ry="20"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+              transform="rotate(45 50 130)"
+            />
+            <ellipse
+              cx="50"
+              cy="130"
+              rx="21"
+              ry="16"
+              fill="url(#ribbonGradient2)"
+              transform="rotate(45 50 130)"
+            />
+
             {/* Diagonal loops - bottom right */}
-            <ellipse cx="130" cy="130" rx="25" ry="20" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" transform="rotate(-45 130 130)" />
-            <ellipse cx="130" cy="130" rx="21" ry="16" fill="url(#ribbonGradient2)" transform="rotate(-45 130 130)" />
-            
+            <ellipse
+              cx="130"
+              cy="130"
+              rx="25"
+              ry="20"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+              transform="rotate(-45 130 130)"
+            />
+            <ellipse
+              cx="130"
+              cy="130"
+              rx="21"
+              ry="16"
+              fill="url(#ribbonGradient2)"
+              transform="rotate(-45 130 130)"
+            />
+
             {/* Ribbon tails */}
-            <path d="M 20 90 Q 0 110, 5 150 L 15 145 Q 15 115, 30 95 Z" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" />
-            <path d="M 160 90 Q 180 110, 175 150 L 165 145 Q 165 115, 150 95 Z" fill="url(#ribbonGradient1)" filter="url(#ribbonShadow)" />
-            
+            <path
+              d="M 20 90 Q 0 110, 5 150 L 15 145 Q 15 115, 30 95 Z"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+            />
+            <path
+              d="M 160 90 Q 180 110, 175 150 L 165 145 Q 165 115, 150 95 Z"
+              fill="url(#ribbonGradient1)"
+              filter="url(#ribbonShadow)"
+            />
+
             {/* Gold trim accents */}
             <circle cx="90" cy="35" r="8" fill="url(#goldTrim)" />
             <circle cx="90" cy="145" r="8" fill="url(#goldTrim)" />

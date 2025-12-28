@@ -71,20 +71,20 @@ function LaunchPageContent() {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative min-h-screen overflow-hidden bg-black">
       {/* Loading Page (shown after timer completes) */}
       {showLoading && <LoadingPage />}
 
       {/* Main Website Content (revealed after cut) */}
       <div
         ref={mainContentRef}
-        className={`min-h-screen ${showContent && !showLoading ? "block" : "hidden"}`}
+        className={`min-h-screen bg-black ${
+          showContent && !showLoading ? "block" : "hidden"
+        }`}
       >
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8">
           <div className="text-center max-w-4xl mx-auto">
             {/* Success checkmark */}
-
-         
 
             <CountdownTimer onComplete={handleTimerComplete} />
           </div>
@@ -94,7 +94,7 @@ function LaunchPageContent() {
       {/* Launch Page Overlay */}
       <div
         ref={overlayRef}
-        className={`fixed inset-0 z-50 ${
+        className={`fixed inset-0 z-50 bg-black ${
           isRevealed && !showContent ? "pointer-events-none" : ""
         } ${showContent ? "hidden" : ""}`}
       >
