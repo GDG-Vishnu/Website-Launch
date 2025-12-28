@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import RibbonCutting from "@/components/RibbonCutting";
+import CountdownTimer from "./timer";
 
 
 export default function LaunchPage() {
@@ -72,51 +73,13 @@ export default function LaunchPage() {
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8">
           <div className="text-center max-w-4xl mx-auto">
             {/* Success checkmark */}
-            <div className="mb-8">
-              <svg
-                className="w-24 h-24 mx-auto text-green-500"
-                viewBox="0 0 100 100"
-              >
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  className="animate-[draw-circle_1s_ease-out_forwards]"
-                  style={{
-                    strokeDasharray: 283,
-                    strokeDashoffset: 283,
-                    animation: "draw-circle 1s ease-out forwards",
-                  }}
-                />
-                <path
-                  d="M30 50 L45 65 L70 35"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="animate-[draw-check_0.5s_ease-out_0.5s_forwards]"
-                  style={{
-                    strokeDasharray: 60,
-                    strokeDashoffset: 60,
-                    animation: "draw-check 0.5s ease-out 0.5s forwards",
-                  }}
-                />
-              </svg>
-            </div>
+           
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                Welcome!
-              </span>
+              <img src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766898618/kqcrwx56wwwgcr1djtil.jpg" alt="" className="w-60 h-60" />
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
-              🎉 The ribbon has been cut! Your experience begins now.
-            </p>
+          <CountdownTimer />
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
