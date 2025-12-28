@@ -4,11 +4,14 @@ import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import RibbonCutting from "@/components/RibbonCutting";
 import CountdownTimer from "./timer";
+import LoadingPage from "./loading_page";
+import { LaunchProvider, useLaunch } from "@/context/LaunchContext";
 
-
-export default function LaunchPage() {
+function LaunchPageContent() {
+  const { setIsCut } = useLaunch();
   const [isRevealed, setIsRevealed] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const mainContentRef = useRef<HTMLDivElement>(null);
@@ -26,6 +29,7 @@ export default function LaunchPage() {
 
   const handleRibbonCut = () => {
     setIsRevealed(true);
+    setIsCut(true); // Update global context
 
     // Dramatic reveal animation
     const timeline = gsap.timeline();
@@ -62,43 +66,27 @@ export default function LaunchPage() {
     }
   }, [showContent]);
 
+  const handleTimerComplete = () => {
+    setShowLoading(true);
+  };
+
   return (
     <main className="relative min-h-screen overflow-hidden">
+      {/* Loading Page (shown after timer completes) */}
+      {showLoading && <LoadingPage />}
+
       {/* Main Website Content (revealed after cut) */}
       <div
         ref={mainContentRef}
-        className={`min-h-screen ${showContent ? "block" : "hidden"}`}
+        className={`min-h-screen ${showContent && !showLoading ? "block" : "hidden"}`}
       >
-  
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8">
           <div className="text-center max-w-4xl mx-auto">
             {/* Success checkmark */}
-           
 
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-              <img src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766898618/kqcrwx56wwwgcr1djtil.jpg" alt="" className="w-60 h-60" />
-            </h1>
+         
 
-          <CountdownTimer />
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                className="group px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-white font-semibold text-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105"
-                onClick={() => window.location.reload()}
-              >
-                <span className="flex items-center gap-2">
-                  🔄 Experience Again
-                </span>
-              </button>
-
-              <a
-                href="#explore"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white font-semibold text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105"
-              >
-                <span className="flex items-center gap-2">🚀 Explore More</span>
-              </a>
-            </div>
-
+            <CountdownTimer onComplete={handleTimerComplete} />
           </div>
         </div>
       </div>
@@ -110,19 +98,19 @@ export default function LaunchPage() {
           isRevealed && !showContent ? "pointer-events-none" : ""
         } ${showContent ? "hidden" : ""}`}
       >
-      
-
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
           {/* Title */}
           <div ref={titleRef} className="text-center mb-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
-            
               <span className="bg-stone-900 bg-clip-text text-transparent">
-               <span className="text-stone-900 bg-white p-2 border-2 border-stone-900"> GDG </span>  <span className="text-white bg-stone-900 p-2">Launch</span> 
+                <span className="text-stone-900 bg-white p-2 border-2 border-stone-900">
+                  {" "}
+                  GDG{" "}
+                </span>{" "}
+                <span className="text-white bg-stone-900 p-2">Launch</span>
               </span>
             </h1>
-          
           </div>
 
           {/* Ribbon Container */}
@@ -142,5 +130,14 @@ export default function LaunchPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+// Wrap with LaunchProvider
+export default function LaunchPage() {
+  return (
+    <LaunchProvider>
+      <LaunchPageContent />
+    </LaunchProvider>
   );
 }

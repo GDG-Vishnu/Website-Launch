@@ -1,34 +1,50 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { useLaunch } from "@/context/LaunchContext";
 
-export default function CountdownTimer() {
+interface CountdownTimerProps {
+  onComplete?: () => void;
+}
+
+export default function CountdownTimer({ onComplete }: CountdownTimerProps) {
+  const { isCut } = useLaunch();
   const [timeLeft, setTimeLeft] = useState(10);
   const [isActive, setIsActive] = useState(false);
 
+  // Start timer only when ribbon is cut (isCut becomes true)
   useEffect(() => {
-    let interval = null;
+    if (isCut) {
+      // Small delay for page transition
+      const startDelay = setTimeout(() => {
+        setIsActive(true);
+      }, 500);
+      
+      return () => clearTimeout(startDelay);
+    }
+  }, [isCut]);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null;
 
     if (isActive && timeLeft > 0) {
       interval = setInterval(() => {
         setTimeLeft((time) => time - 1);
       }, 1000);
     }
-    //@ts-ignore
-    return () => clearInterval(interval);
-  }, [isActive, timeLeft]);
 
-  const toggleTimer = () => {
-    if (timeLeft === 0) {
-      setTimeLeft(10);
+    // Trigger callback when timer reaches 0
+    if (timeLeft === 0 && onComplete) {
+      const timeout = setTimeout(() => {
+        onComplete();
+      }, 1000); // Small delay to show "Launched!" message
+      return () => clearTimeout(timeout);
     }
-    setIsActive(!isActive);
-  };
 
-  const resetTimer = () => {
-    setTimeLeft(10);
-    setIsActive(false);
-  };
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isActive, timeLeft, onComplete]);
 
-  const progress = ((10 - timeLeft) / 10) * 100;
+  const progress = ((35 - timeLeft) / 35) * 100;
 
   return (
     <div className="h-[500px] bg-black flex items-center justify-center p-4">
@@ -51,26 +67,8 @@ export default function CountdownTimer() {
             <div className="text-8xl font-bold text-black font-mono">
               {timeLeft}
             </div>
-            {timeLeft === 0 && (
-              <div className="mt-4 text-2xl font-bold text-black">
-                Time's Up!
-              </div>
-            )}
-          </div>
-
-          <div className="flex gap-4 justify-center">
-            <button
-              onClick={toggleTimer}
-              className="px-8 py-3 font-bold text-lg rounded-lg bg-black text-white hover:bg-gray-800"
-            >
-              {isActive ? 'Pause' : 'Start'}
-            </button>
-            <button
-              onClick={resetTimer}
-              className="px-8 py-3 font-bold text-lg rounded-lg bg-white text-black border-4 border-black hover:bg-gray-100"
-            >
-              Reset
-            </button>
+            
+            
           </div>
         </div>
       </div>
