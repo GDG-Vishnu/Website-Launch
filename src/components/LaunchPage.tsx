@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import RibbonCutting from "@/components/RibbonCutting";
-import CinematicBackground from "@/components/CinematicBackground";
+
 
 export default function LaunchPage() {
   const [isRevealed, setIsRevealed] = useState(false);
@@ -68,7 +68,7 @@ export default function LaunchPage() {
         ref={mainContentRef}
         className={`min-h-screen ${showContent ? "block" : "hidden"}`}
       >
-        <CinematicBackground />
+  
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8">
           <div className="text-center max-w-4xl mx-auto">
             {/* Success checkmark */}
@@ -136,39 +136,6 @@ export default function LaunchPage() {
               </a>
             </div>
 
-            {/* Feature cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-              {[
-                {
-                  icon: "✨",
-                  title: "Interactive",
-                  desc: "Engaging user experience",
-                },
-                {
-                  icon: "🎨",
-                  title: "Beautiful",
-                  desc: "Stunning visual design",
-                },
-                { icon: "⚡", title: "Fast", desc: "Optimized performance" },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                  style={{
-                    animation: `fadeInUp 0.6s ease-out ${
-                      0.8 + index * 0.1
-                    }s forwards`,
-                    opacity: 0,
-                  }}
-                >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white/60">{feature.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -180,23 +147,19 @@ export default function LaunchPage() {
           isRevealed && !showContent ? "pointer-events-none" : ""
         } ${showContent ? "hidden" : ""}`}
       >
-        <CinematicBackground />
+      
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
           {/* Title */}
           <div ref={titleRef} className="text-center mb-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
-              <span className="block text-sm md:text-base font-light text-white/60 uppercase tracking-[0.3em] mb-4">
-                Grand Opening
-              </span>
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                GDG Launch
+            
+              <span className="bg-stone-900 bg-clip-text text-transparent">
+               <span className="text-stone-900 bg-white p-2 border-2 border-stone-900"> GDG </span>  <span className="text-white bg-stone-900 p-2">Launch</span> 
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mt-4 font-light">
-              Cut the ribbon to unveil something amazing
-            </p>
+          
           </div>
 
           {/* Ribbon Container */}
