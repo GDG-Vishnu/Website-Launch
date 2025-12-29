@@ -12,7 +12,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html, body {
+html,
+body {
   background: #000000;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
@@ -21,7 +22,8 @@ html, body {
   min-width: 100vw;
 }
 
-#__next, main {
+#__next,
+main {
   background: #000000;
   min-height: 100vh;
 }
