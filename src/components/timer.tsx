@@ -31,12 +31,12 @@ export default function CountdownTimer({ onComplete }: CountdownTimerProps) {
   };
 
   return (
-    <div className="min-h-screen w-full bg-transparent flex flex-col items-center justify-center">
+    <div className="fixed inset-0 w-screen h-screen bg-white overflow-hidden">
       {/* Video Timer */}
       <video
         ref={videoRef}
         src="/timer.mp4"
-        className="w-full h-auto"
+        className="w-full h-full object-cover"
         muted
         playsInline
         onEnded={handleVideoEnd}

@@ -14,9 +14,11 @@
 
 html,
 body {
-  background: #000000;
+  background-color: white;
+  background-image: url("/bg-grid.png");
+  background-repeat: repeat;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Google Sans", "Roboto", "PT Sans", "Sansation", sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
   min-width: 100vw;
@@ -24,7 +26,7 @@ body {
 
 #__next,
 main {
-  background: #000000;
+  background: transparent;
   min-height: 100vh;
 }
 

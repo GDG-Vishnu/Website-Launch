@@ -527,31 +527,32 @@ function LaunchPageContent() {
         } ${showContent ? "hidden" : ""}`}
       >
         {/* Top left image */}
-        {!isCut && (
-          <img
-            src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766981050/amvovtdfzftydqa5skhf.png"
-            alt="Decoration Left"
-            className="absolute top-4 left-4 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain z-20"
-          />
-        )}
+        <div className="flex justify-between relative">
+          {!isCut && (
+            <img
+              src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766981050/amvovtdfzftydqa5skhf.png"
+              alt="Decoration Left"
+              className="absolute top-0 left-0 w-40 h-40 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain z-20"
+            />
+          )}
 
-        {/* Top right image */}
-        {!isCut && (
-          <img
-            src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766921668/Gemini_Generated_Image_1uwadk1uwadk1uwa_1_uv7hrs.png"
-            alt="Decoration"
-            className="absolute top-4 right-4 w-16 h-16 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain z-20"
-          />
-        )}
+          {!isCut && (
+            <img
+              src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766921668/Gemini_Generated_Image_1uwadk1uwadk1uwa_1_uv7hrs.png"
+              alt="Decoration"
+              className="absolute top-0 right-0 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain z-20"
+            />
+          )}
+        </div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
           {/* Logo */}
           <div ref={titleRef} className="mb-8">
             <img
-              src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766903285/vqbqthkdildhpgbtocgp.png"
+              src="/logo.png"
               alt="GDG Logo"
-              className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain mx-auto"
+              className="w-100 h-100 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain mx-auto"
             />
           </div>
 

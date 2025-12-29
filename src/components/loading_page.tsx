@@ -38,14 +38,7 @@ export default function LoadingPage() {
       {/* Grid background */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: "50px 50px",
-          animation: "gridFade 3s ease-in-out infinite",
-        }}
+      
       />
 
       {/* Background decorative elements */}
