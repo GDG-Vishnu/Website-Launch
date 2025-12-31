@@ -40,9 +40,8 @@ export default function RootLayout({
         className="bg-white font-sans"
         style={{
           backgroundColor: "white",
-          backgroundImage: `url('/bg-grid.png')`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "auto",
+          backgroundImage: `linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)`,
+          backgroundSize: "20px 20px",
           fontFamily:
             "'Google Sans', 'Roboto', 'PT Sans', 'Sansation', sans-serif",
         }}

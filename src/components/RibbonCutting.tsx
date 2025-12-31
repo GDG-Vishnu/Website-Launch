@@ -277,10 +277,7 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
     const doodles = [
       "🎉",
       "✨",
-      "🎊",
-      "🏆",
-      "🌟",
-      
+  
       "⚡",
 
     ];
@@ -288,7 +285,7 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
     const geometricShapes = ["●", "◆", "▲", "■", "★", "♦",];
 
     // Create 80 doodles spread across the entire screen
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 50; i++) {
       const delay = i * 0.02 + Math.random() * 0.5; // More varied timing
 
       setTimeout(() => {

@@ -526,21 +526,31 @@ function LaunchPageContent() {
           isRevealed && !showContent ? "pointer-events-none" : ""
         } ${showContent ? "hidden" : ""}`}
       >
-        {/* Top left image */}
+        {/* Top decorative strips */}
         <div className="flex justify-between relative">
           {!isCut && (
-            <img
-              src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766981050/amvovtdfzftydqa5skhf.png"
-              alt="Decoration Left"
-              className="absolute top-0 left-0 w-40 h-40 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain z-20"
+            <div
+              className="absolute top-40  -left-14 z-20"
+              style={{
+                width: "360px",
+                height: "80px",
+                backgroundColor: "#dc2626",
+                transform: "rotate(-45deg)",
+                transformOrigin: "top left",
+              }}
             />
           )}
 
           {!isCut && (
-            <img
-              src="https://res.cloudinary.com/dlupkibvq/image/upload/v1766921668/Gemini_Generated_Image_1uwadk1uwadk1uwa_1_uv7hrs.png"
-              alt="Decoration"
-              className="absolute top-0 right-0 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain z-20"
+            <div
+              className="absolute top-40  -right-14 z-20"
+              style={{
+               width: "360px",
+                height: "80px",
+                backgroundColor: "#dc2626",
+                transform: "rotate(45deg)",
+                transformOrigin: "top right",
+              }}
             />
           )}
         </div>
