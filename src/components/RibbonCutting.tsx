@@ -278,26 +278,14 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
       "🎉",
       "✨",
       "🎊",
-      "⭐",
-      "💥",
-      "🔥",
-      "🎈",
-      "🎁",
       "🏆",
       "🌟",
-      "❤️",
-      "💫",
-      "🚀",
+      
       "⚡",
-      "🎯",
-      "🎪",
-      "🎭",
-      "🎨",
-      "🎵",
-      "🎸",
+
     ];
 
-    const geometricShapes = ["●", "◆", "▲", "■", "★", "♦", "♠", "♣", "♥"];
+    const geometricShapes = ["●", "◆", "▲", "■", "★", "♦",];
 
     // Create 80 doodles spread across the entire screen
     for (let i = 0; i < 80; i++) {
