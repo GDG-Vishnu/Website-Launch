@@ -496,7 +496,7 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
       {/* ================= CENTRAL RED SATIN RIBBON BOW ILLUSTRATION ================= */}
       <div
         ref={centerFlowerRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[41.6%] z-30 transition-transform duration-300 hover:scale-110 cursor-pointer"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 transition-transform duration-300 hover:scale-110 cursor-pointer"
       >
         {/* Ambient Red Glow */}
         <div className="absolute inset-0 rounded-full bg-red-600/40 blur-2xl animate-pulse pointer-events-none" />
@@ -529,20 +529,19 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
             </defs>
 
             {/* Ambient Shadow under Bow */}
-            <ellipse cx="120" cy="98" rx="85" ry="32" fill="rgba(0,0,0,0.5)" />
+            <ellipse cx="120" cy="120" rx="80" ry="28" fill="rgba(0,0,0,0.45)" />
 
             {/* --- TAILS --- */}
             {/* Left Tail */}
             <g>
               <path
-                d="M 110,105 C 100,138 78,180 58,212 L 86,220 L 108,180 L 122,108 Z"
+                d="M 110,125 C 100,158 78,198 58,228 L 86,236 L 108,196 L 122,128 Z"
                 fill="url(#bowGlossyRed)"
                 stroke="#7F1D1D"
                 strokeWidth="2"
               />
-              {/* Left Tail Glossy White Highlight */}
               <path
-                d="M 110,108 C 102,136 82,176 65,206"
+                d="M 110,128 C 102,156 82,194 65,222"
                 stroke="#FFFFFF"
                 strokeWidth="3"
                 strokeLinecap="round"
@@ -554,14 +553,13 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
             {/* Right Tail */}
             <g>
               <path
-                d="M 130,105 C 140,138 162,180 182,212 L 154,220 L 132,180 L 118,108 Z"
+                d="M 130,125 C 140,158 162,198 182,228 L 154,236 L 132,196 L 118,128 Z"
                 fill="url(#bowGlossyRed)"
                 stroke="#7F1D1D"
                 strokeWidth="2"
               />
-              {/* Right Tail Glossy White Highlight */}
               <path
-                d="M 130,108 C 138,136 158,176 175,206"
+                d="M 130,128 C 138,156 158,194 175,222"
                 stroke="#FFFFFF"
                 strokeWidth="3"
                 strokeLinecap="round"
@@ -572,21 +570,18 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
 
             {/* --- LEFT LOOP --- */}
             <g>
-              {/* Outer Loop */}
               <path
-                d="M 112,100 C 80,70 25,60 20,92 C 15,120 70,125 112,108 Z"
+                d="M 112,120 C 80,90 25,80 20,112 C 15,140 70,145 112,128 Z"
                 fill="url(#bowGlossyRed)"
                 stroke="#7F1D1D"
                 strokeWidth="2"
               />
-              {/* Dark Cavity Interior */}
               <path
-                d="M 106,98 C 82,82 46,78 36,92 C 30,102 62,112 106,104 Z"
+                d="M 106,118 C 82,102 46,98 36,112 C 30,122 62,132 106,124 Z"
                 fill="url(#bowGlossyInnerShadow)"
               />
-              {/* Glossy White Edge Highlight along upper curve */}
               <path
-                d="M 110,90 C 76,68 32,62 24,82"
+                d="M 110,110 C 76,88 32,82 24,102"
                 stroke="#FFFFFF"
                 strokeWidth="4"
                 strokeLinecap="round"
@@ -597,21 +592,18 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
 
             {/* --- RIGHT LOOP --- */}
             <g>
-              {/* Outer Loop */}
               <path
-                d="M 128,100 C 160,70 215,60 220,92 C 225,120 170,125 128,108 Z"
+                d="M 128,120 C 160,90 215,80 220,112 C 225,140 170,145 128,128 Z"
                 fill="url(#bowGlossyRed)"
                 stroke="#7F1D1D"
                 strokeWidth="2"
               />
-              {/* Dark Cavity Interior */}
               <path
-                d="M 134,98 C 158,82 194,78 204,92 C 210,102 178,112 134,104 Z"
+                d="M 134,118 C 158,102 194,98 204,112 C 210,122 178,132 134,124 Z"
                 fill="url(#bowGlossyInnerShadow)"
               />
-              {/* Glossy White Edge Highlight along upper curve */}
               <path
-                d="M 130,90 C 164,68 208,62 216,82"
+                d="M 130,110 C 164,88 208,82 216,102"
                 stroke="#FFFFFF"
                 strokeWidth="4"
                 strokeLinecap="round"
@@ -620,13 +612,12 @@ export default function RibbonCutting({ onCut }: RibbonCuttingProps) {
               />
             </g>
 
-            {/* --- CENTER KNOT BAND (CENTERED AT Y=100) --- */}
+            {/* --- CENTER KNOT BAND (CENTERED AT Y=120) --- */}
             <g>
-              <rect x="104" y="80" width="32" height="40" rx="10" fill="url(#bowKnotStripes)" stroke="#7F1D1D" strokeWidth="2" />
-              {/* Vertical Stripe Lines */}
-              <line x1="112" y1="81" x2="112" y2="119" stroke="#7F1D1D" strokeWidth="1.5" />
-              <line x1="120" y1="80" x2="120" y2="120" stroke="#FFFFFF" strokeWidth="2" opacity="0.8" />
-              <line x1="128" y1="81" x2="128" y2="119" stroke="#7F1D1D" strokeWidth="1.5" />
+              <rect x="104" y="98" width="32" height="44" rx="10" fill="url(#bowKnotStripes)" stroke="#7F1D1D" strokeWidth="2" />
+              <line x1="112" y1="99" x2="112" y2="141" stroke="#7F1D1D" strokeWidth="1.5" />
+              <line x1="120" y1="98" x2="120" y2="142" stroke="#FFFFFF" strokeWidth="2" opacity="0.85" />
+              <line x1="128" y1="99" x2="128" y2="141" stroke="#7F1D1D" strokeWidth="1.5" />
             </g>
           </svg>
         </div>
