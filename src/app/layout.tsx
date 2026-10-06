@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Vishnu Quantum Club | Launch Experience",
   description: "Cut the ceremonial ribbon to unveil the Vishnu Quantum Club experience",
+  icons: [],
 };
 
 export default function RootLayout({
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="data:," />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

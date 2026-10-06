@@ -130,25 +130,15 @@ export default function RibbonCuttingPage({ onComplete }: RibbonCuttingPageProps
           <ellipse cx="500" cy="300" rx="460" ry="160" fill="none" stroke="url(#orbitRCP1)" strokeWidth="1.2" transform="rotate(-12 500 300)" />
           <ellipse cx="500" cy="300" rx="420" ry="140" fill="none" stroke="url(#orbitRCP2)" strokeWidth="1.0" transform="rotate(22 500 300)" />
         </svg>
-
-        {/* Center Screen Cut Seam Line */}
-        <div
-          className="absolute top-1/2 left-0 w-full h-[1px] -translate-y-1/2 opacity-30"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent 0%, #EF4444 20%, #FDE68A 50%, #EF4444 80%, transparent 100%)",
-            boxShadow: "0 0 16px rgba(239, 68, 68, 0.5)",
-          }}
-        />
       </div>
 
 
       {/* ── MAIN HERO & RIBBON CLUSTER ────────────────────────────────── */}
-      <main className="relative z-20 w-full max-w-6xl mx-auto flex flex-col items-center justify-center px-4 my-auto">
+      <main className="relative z-20 w-full flex flex-col items-center justify-center my-auto">
         {/* Hero Title Container */}
         <div
           ref={heroTextRef}
-          className="text-center mb-6 sm:mb-8 md:mb-10 max-w-4xl"
+          className="text-center mb-6 sm:mb-8 md:mb-10 max-w-4xl px-4"
         >
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-3 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-purple-100 to-indigo-200 drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)] uppercase">
             VISHNU QUANTUM CLUB
