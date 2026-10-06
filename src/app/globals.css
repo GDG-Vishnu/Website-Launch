@@ -1,24 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ededed;
+  /* Vishnu Quantum Club - Color Palette */
+  --primary-bg: #E2E7F8;
+  --secondary-bg: #DDE2F5;
+  --cloud-white: #F4F6FF;
+  --deep-indigo: #2A1254;
+  --midnight-violet: #230B48;
+  --dark-violet: #1B1238;
+  --flamingo-pink: #F082B2;
+  --magenta: #ED4998;
+  --electric-purple: #7C24CC;
+  --bright-purple: #9C32E2;
+  --quantum-blue: #2B68E8;
+  --cobalt-blue: #4B88FF;
+  --cool-grey: #C8CDD8;
+  --grey-accent: #A1A8B8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--primary-bg);
+  --color-foreground: var(--deep-indigo);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 html,
 body {
-  background-color: white;
-  background-image: url("/bg-grid.png");
-  background-repeat: repeat;
-  color: var(--foreground);
-  font-family: "Google Sans", "Roboto", "PT Sans", "Sansation", sans-serif;
+  background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--cloud-white) 100%);
+  background-attachment: fixed;
+  color: var(--deep-indigo);
+  font-family: "IBM Plex Sans", "Roboto", "PT Sans", "Sansation", sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
   min-width: 100vw;
@@ -85,10 +97,10 @@ main {
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 20px rgba(124, 36, 204, 0.3), 0 0 10px rgba(43, 104, 232, 0.2);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 40px rgba(156, 50, 226, 0.6), 0 0 20px rgba(75, 136, 255, 0.4);
   }
 }
 
@@ -113,6 +125,93 @@ main {
   }
 }
 
+@keyframes gridSlide {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(60px, 60px);
+  }
+}
+
+@keyframes gridFade {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Quantum-themed animations */
+@keyframes quantum-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes quantum-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes blob-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes quantum-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(124, 36, 204, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(156, 50, 226, 0.6), 0 0 40px rgba(240, 130, 178, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(43, 104, 232, 0.3);
+  }
+}
+
 .animate-gradient {
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
@@ -123,26 +222,42 @@ main {
   background-size: 200% 100%;
 }
 
+.animate-quantum-float {
+  animation: quantum-float 6s ease-in-out infinite;
+}
+
+.animate-quantum-spin {
+  animation: quantum-spin 8s linear infinite;
+}
+
+.animate-blob-pulse {
+  animation: blob-pulse 4s ease-in-out infinite;
+}
+
+.animate-quantum-glow {
+  animation: quantum-glow 5s ease-in-out infinite;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(42, 18, 84, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 215, 0, 0.3);
+  background: linear-gradient(180deg, rgba(124, 36, 204, 0.5), rgba(43, 104, 232, 0.5));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 215, 0, 0.5);
+  background: linear-gradient(180deg, rgba(156, 50, 226, 0.7), rgba(75, 136, 255, 0.7));
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(255, 215, 0, 0.3);
-  color: white;
+  background: rgba(124, 36, 204, 0.3);
+  color: var(--deep-indigo);
 }

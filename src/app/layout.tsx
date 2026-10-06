@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GDG Launch | Grand Opening",
-  description: "Cut the ceremonial ribbon to unveil the GDG experience",
+  title: "Vishnu Quantum Club | Launch Experience",
+  description: "Cut the ceremonial ribbon to unveil the Vishnu Quantum Club experience",
 };
 
 export default function RootLayout({
@@ -32,18 +32,18 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Noto+Sans+Symbols:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Sans+Symbols:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body
-        className="bg-white font-sans"
+        className="font-sans"
         style={{
-          backgroundColor: "white",
-          backgroundImage: `linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)`,
-          backgroundSize: "20px 20px",
+          background: "linear-gradient(135deg, #E2E7F8 0%, #DDE2F5 50%, #F4F6FF 100%)",
+          backgroundAttachment: "fixed",
           fontFamily:
-            "'Google Sans', 'Roboto', 'PT Sans', 'Sansation', sans-serif",
+            "'IBM Plex Sans', 'Roboto', 'PT Sans', 'Sansation', sans-serif",
+          color: "#2A1254",
         }}
       >
         {children}

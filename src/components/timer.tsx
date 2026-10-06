@@ -10,15 +10,15 @@ export default function CountdownTimer({ onComplete }: CountdownTimerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoEnded, setVideoEnded] = useState(false);
 
-  // Start video when ribbon is cut
+  // Start video when countdown starts
   useEffect(() => {
-    if (isCut && videoRef.current) {
+    if (videoRef.current) {
       const startDelay = setTimeout(() => {
-        videoRef.current?.play();
-      }, 500);
+        videoRef.current?.play().catch(() => {});
+      }, 300);
       return () => clearTimeout(startDelay);
     }
-  }, [isCut]);
+  }, []);
 
   // Handle video end
   const handleVideoEnd = () => {
@@ -31,7 +31,7 @@ export default function CountdownTimer({ onComplete }: CountdownTimerProps) {
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen bg-white overflow-hidden">
+    <div className="fixed inset-0 w-screen h-screen overflow-hidden" style={{background: "linear-gradient(135deg, #E2E7F8 0%, #DDE2F5 50%, #F4F6FF 100%)"}}>
       {/* Video Timer */}
       <video
         ref={videoRef}
