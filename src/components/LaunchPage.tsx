@@ -58,7 +58,7 @@ function LaunchPageContent() {
 
   // ── 3. Loading ends → Website ───────────────────────────────────
   const handleLoadingComplete = () => {
-    window.location.href = "https://vishnuquantumclub.com";
+    window.location.href = "https://vishnu-quantum-club.vercel.app/";
   };
 
   return (
