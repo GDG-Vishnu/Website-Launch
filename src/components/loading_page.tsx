@@ -28,7 +28,7 @@ export default function LoadingPage({ onComplete }: LoadingPageProps) {
             onComplete();
           } else {
             // Redirect to Vishnu Quantum Club website
-            window.location.href = "https://vishnuquantumclub.com";
+            window.location.href = "https://vishnu-quantum-club.vercel.app/";
           }
           return 100;
         }
